@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import envCompatible from 'vite-plugin-env-compatible';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), envCompatible({
+    // Load environment variables from .env files
+    loadDir: process.cwd(),
+    mode: process.env.NODE_ENV
+  })],
   base:"/WeatherCloud/"
 })
