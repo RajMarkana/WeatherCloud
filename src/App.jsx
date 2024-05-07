@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CiSearch } from "react-icons/ci";
 
 const App = () => {
   const [city, setCity] = useState('');
@@ -20,6 +21,11 @@ const App = () => {
     if (e.key === 'Enter') {
       getWeather(city);
     }
+  };
+  const handleButtonPress = (e) => {
+    
+      getWeather(city);
+    
   };
 
   function getWeather(city) {
@@ -64,17 +70,17 @@ const App = () => {
   }
 
   return (
-    <div className="relative h-screen bg-slate-500  w-screen ">
-      <div className="sm:h-full bg-cover bg-center" style={{ backgroundImage: bgImage }}>
+    <div className="sm:h-screen h-full w-screen bg-cover bg-center" style={{ backgroundImage: bgImage }}>
+      <div>
         <div className='flex flex-wrap sm:justify-between justify-center gap-10 items-center p-4'>
           <div className='flex justify-center items-center'>
             <img src="./logo4.png" width={80} alt="logo" />
             <p className='text-2xl text-white font-semibold'>WeatherCloud</p>
           </div>
-          <div>
+          <div className='flex justify-center items-center'>
             <input
               type="text"
-              className='bg-white bg-opacity-10 w-80 text-white font-medium text-lg border-none outline-none p-5 rounded-full h-14 backdrop-blur-md backdrop-filter'
+              className='bg-white bg-opacity-10 sm:w-80 w-72 text-white font-medium text-lg border-none outline-none p-5 rounded-full h-14 backdrop-blur-md backdrop-filter'
               placeholder='Search by City'
               autoComplete='false'
               autoCorrect='false'
@@ -82,6 +88,7 @@ const App = () => {
               onChange={handleChange}
               onKeyDown={handleKeyPress}
             />
+            <button type="button" className='bg-white bg-opacity-10  text-white font-medium text-lg border-none outline-none p-3 ml-4 rounded-full h-fit  backdrop-blur-md backdrop-filter' onClick={handleButtonPress}><CiSearch /></button>
           </div>
         </div>
 
@@ -99,7 +106,8 @@ const App = () => {
           </div>
         ) : (
           <div id='weatherdata' className="p-16 w-full flex flex-col justify-center items-center text-white">
-            <p className='text-5xl font-bold text-center'>Weather Not Found !</p>
+            <img src="./no.png" width={400} alt="" />
+            <p className='sm:text-5xl text-3xl font-bold text-center'>Weather Not Found !</p>
           </div>
         )}
          <div className='sm:absolute sm:bottom-0  w-full text-slate-300 font-medium text-lg text-center p-10' >
