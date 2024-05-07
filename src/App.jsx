@@ -23,10 +23,7 @@ const App = () => {
   };
 
   function getWeather(city) {
-    // const api = import.meta.env.VITE_REACT_APP_WEATHER_KEY;
-    const api = import.meta.env.REACT_APP_WEATHER_KEY;
-    console.log(api);
-    console.log(import.meta.env);
+    const api = "a44a4b51cc586a2a98c94c9ad82b9273";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`;
 
     fetch(url)
@@ -67,8 +64,8 @@ const App = () => {
   }
 
   return (
-    <div className="relative h-full w-screen ">
-      <div className="sm:h-screen h-full bg-cover bg-center" style={{ backgroundImage: bgImage }}>
+    <div className="relative h-screen bg-slate-500  w-screen ">
+      <div className="sm:h-full bg-cover bg-center" style={{ backgroundImage: bgImage }}>
         <div className='flex flex-wrap sm:justify-between justify-center gap-10 items-center p-4'>
           <div className='flex justify-center items-center'>
             <img src="./logo4.png" width={80} alt="logo" />
@@ -105,9 +102,10 @@ const App = () => {
             <p className='text-5xl font-bold text-center'>Weather Not Found !</p>
           </div>
         )}
-        <div className='absolute bottom-0  w-full text-slate-300 font-medium text-lg text-center p-10' >
+         <div className='sm:absolute sm:bottom-0  w-full text-slate-300 font-medium text-lg text-center p-10' >
           Copyright © 2023-24 Raj Markana. All Rights Recived
         </div>
+       
       </div>
     </div>
   );
