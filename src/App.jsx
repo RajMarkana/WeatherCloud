@@ -48,7 +48,7 @@ const App = () => {
     const getRandomInt = (max) => {
       return Math.floor(Math.random() * max) + 1;
     };
-    setBgImage(`url('/bg (${getRandomInt(8)}).jpg')`);
+    setBgImage(`url('./bg (${getRandomInt(8)}).jpg')`);
   }, []);
 
   function toPascalCase(string) {
@@ -69,7 +69,7 @@ const App = () => {
       <div className="absolute h-screen inset-0">
         <div className='flex flex-wrap sm:justify-between justify-center gap-10 items-center p-4'>
           <div className='flex justify-center items-center'>
-            <img src="/logo4.png" width={80} alt="logo" />
+            <img src="./logo4.png" width={80} alt="logo" />
             <p className='text-2xl text-white font-semibold'>WeatherCloud</p>
           </div>
           <div>
