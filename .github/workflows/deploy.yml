@@ -49,3 +49,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+      
+      - name: Inject environment variable
+        run: echo "VITE_REACT_APP_WEATHER_KEY=${{ secrets.VITE_REACT_APP_WEATHER_KEY }}" >> $GITHUB_ENV

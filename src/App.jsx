@@ -25,6 +25,7 @@ const App = () => {
   function getWeather(city) {
     // const api = import.meta.env.VITE_REACT_APP_WEATHER_KEY;
     const api = process.env.VITE_REACT_APP_WEATHER_KEY;
+    console.log(api);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`;
 
     fetch(url)
